@@ -15,16 +15,16 @@ const Filter = ({
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   // 필터링 적용 핸들러
-  const FilterHandler = (c: string) => {
+  const handleFilter = (c: string) => {
     setSelectedFilter(c);
   };
 
   // 초기화 핸들러
-  const resetHandler = () => {
+  const handleReset = () => {
     setSelectedFilter("");
   };
 
-  const dropDownHandler = () => {
+  const handleDropDown = () => {
     setIsOpen(!isOpen);
   };
 
@@ -37,13 +37,13 @@ const Filter = ({
         `}
       >
         <div css={dropDownWrapper}>
-          <button onClick={dropDownHandler}>
+          <button onClick={handleDropDown}>
             {selectedFilter ? selectedFilter : "선택하기"}
           </button>
           {isOpen && (
             <ul css={dropdownbox}>
               {categories.map((c: string) => (
-                <li css={dropItem} onClick={() => FilterHandler(c)}>
+                <li css={dropItem} onClick={() => handleFilter(c)}>
                   {c}
                 </li>
               ))}
@@ -55,7 +55,7 @@ const Filter = ({
             box-sizing: border-box;
             height: fit-content;
           `}
-          onClick={resetHandler}
+          onClick={handleReset}
         >
           초기화
         </button>

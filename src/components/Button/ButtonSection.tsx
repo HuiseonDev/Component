@@ -6,13 +6,13 @@ const ButtonSection = () => {
   const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(true);
   const [isChecked, setIsChecked] = useState<boolean>(false);
 
-  const ReadyHandler = () => {
+  const handleReady = () => {
     console.log("기본 버튼 활성화 완료");
     setIsButtonDisabled(!isButtonDisabled);
     setIsChecked(!isChecked);
   };
 
-  const ButtonHandler = () => {
+  const handleClick = () => {
     console.log("버튼클릭");
   };
 
@@ -21,7 +21,7 @@ const ButtonSection = () => {
       <p>기본 버튼 영역</p>
 
       <label css={checkboxWrapper} aria-label="기본 버튼 활성화 체크박스">
-        <input css={checkboxStyle} type="checkbox" onChange={ReadyHandler} />
+        <input css={checkboxStyle} type="checkbox" onChange={handleReady} />
         <span css={[checkboxBox, isChecked && checkedBox]} />
         <span>기본 버튼 활성화</span>
       </label>
@@ -35,14 +35,14 @@ const ButtonSection = () => {
         `}
       >
         <Button
-          onClick={ButtonHandler}
+          onClick={handleClick}
           disabled={isButtonDisabled}
           size="small"
           width="fit"
           BasicButtontext={"small-fit"}
         />
         <Button
-          onClick={ButtonHandler}
+          onClick={handleClick}
           disabled={isButtonDisabled}
           size="small"
           width="max"
@@ -58,14 +58,14 @@ const ButtonSection = () => {
         `}
       >
         <Button
-          onClick={ButtonHandler}
+          onClick={handleClick}
           disabled={isButtonDisabled}
           size="medium"
           width="fit"
           BasicButtontext={"medium-fit"}
         />
         <Button
-          onClick={ButtonHandler}
+          onClick={handleClick}
           disabled={isButtonDisabled}
           size="medium"
           width="max"
@@ -81,14 +81,14 @@ const ButtonSection = () => {
         `}
       >
         <Button
-          onClick={ButtonHandler}
+          onClick={handleClick}
           disabled={isButtonDisabled}
           size="large"
           width="fit"
           BasicButtontext={"large-fit"}
         />
         <Button
-          onClick={ButtonHandler}
+          onClick={handleClick}
           disabled={isButtonDisabled}
           size="large"
           width="max"

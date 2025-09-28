@@ -65,17 +65,17 @@ const ListRow = () => {
   );
 
   // 아이템 선택 핸들러
-  const ListRowItemHandler = (Item: string) => {
+  const handleListDownItem = (Item: string) => {
     console.log("아이템 선택", Item);
   };
 
   // 아이템 편집 버튼 노출 핸들러
-  const EditHandler = () => {
+  const handleEdit = () => {
     setIsEdit(!isEdit);
   };
 
   // 아이템 삭제 핸들러
-  const DeleteHandler = (
+  const handleDelete = (
     e: React.MouseEvent<HTMLButtonElement>,
     mockItem: string
   ) => {
@@ -91,12 +91,12 @@ const ListRow = () => {
         setSelectedFilter={setIsFilter}
       />
       <section>
-        <button onClick={EditHandler}>
+        <button onClick={handleEdit}>
           {isEdit ? "수정완료" : "리스트 수정하기"}
         </button>
         {filterData.map((mockItem) => (
           <ul
-            onClick={() => ListRowItemHandler(mockItem.title)}
+            onClick={() => handleListDownItem(mockItem.title)}
             key={mockItem.title}
             css={ListRowWrapper}
           >
@@ -117,7 +117,7 @@ const ListRow = () => {
               </div>
               {isEdit && (
                 <button
-                  onClick={(e) => DeleteHandler(e, mockItem.title)}
+                  onClick={(e) => handleDelete(e, mockItem.title)}
                   css={deleteStyle}
                 >
                   삭제

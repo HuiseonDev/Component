@@ -8,13 +8,13 @@ import { css } from "@emotion/react";
 //! 외부 라이브러리에 종속되어도 환경별 UI가 최대한 동일하게 출력되는게 우선인가?
 
 interface bottomCTAProps {
-  bottomCTAHandler: () => void;
+  handleBottom: () => void;
   bottomCTAText: string;
   bottomCTADisabled: boolean;
 }
 
 const BottomCTA = ({
-  bottomCTAHandler,
+  handleBottom,
   bottomCTAText,
   bottomCTADisabled,
 }: bottomCTAProps) => {
@@ -22,7 +22,7 @@ const BottomCTA = ({
     <div css={bottomCTAWrapper}>
       <button
         css={bottomCTAStyle}
-        onClick={bottomCTAHandler}
+        onClick={handleBottom}
         disabled={bottomCTADisabled}
         type="button"
         aria-label={bottomCTAText}
