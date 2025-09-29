@@ -2,17 +2,15 @@ import { css } from "@emotion/react";
 import type { ComponentPropsWithoutRef } from "react";
 
 interface BasicButtonProps extends ComponentPropsWithoutRef<"button"> {
-  BasicButtontext: string;
+  children: React.ReactNode;
   size: "small" | "medium" | "large";
   width: "fit" | "max";
 }
 
 const Button = ({
-  BasicButtontext,
+  children,
   size = "small",
   width = "fit",
-  disabled = false,
-  onClick,
   ...rest
 }: BasicButtonProps) => {
   // 버튼 가로값 스타일
@@ -73,15 +71,8 @@ const Button = ({
   `;
 
   return (
-    <button
-      aria-label={BasicButtontext}
-      type="button"
-      css={styles}
-      disabled={disabled}
-      onClick={onClick}
-      {...rest}
-    >
-      {BasicButtontext}
+    <button type="button" css={styles} {...rest}>
+      {children}
     </button>
   );
 };
