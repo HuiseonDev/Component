@@ -1,6 +1,7 @@
 import { css } from "@emotion/react";
 import Button from "./Button";
 import { useState } from "react";
+import { BUTTON_SIZE } from "../../types/ButtonSize";
 
 const ButtonSection = () => {
   const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(true);
@@ -37,7 +38,7 @@ const ButtonSection = () => {
         <Button
           onClick={handleClick}
           disabled={isButtonDisabled}
-          size="small"
+          size={BUTTON_SIZE.SMALL}
           aria-label="small-fit-test-button"
         >
           small
@@ -51,7 +52,11 @@ const ButtonSection = () => {
           margin-bottom: 1rem;
         `}
       >
-        <Button onClick={handleClick} disabled={isButtonDisabled} size="medium">
+        <Button
+          onClick={handleClick}
+          disabled={isButtonDisabled}
+          size={BUTTON_SIZE.MEDIUM}
+        >
           medium
         </Button>
       </div>
@@ -63,7 +68,11 @@ const ButtonSection = () => {
           margin-bottom: 1rem;
         `}
       >
-        <Button onClick={handleClick} disabled={isButtonDisabled} size="large">
+        <Button
+          onClick={handleClick}
+          disabled={isButtonDisabled}
+          size={BUTTON_SIZE.LARGE}
+        >
           large
         </Button>
       </div>

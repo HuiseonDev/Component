@@ -1,12 +1,15 @@
 import { css } from "@emotion/react";
 import type { ComponentPropsWithoutRef } from "react";
+import type { BUTTON_SIZE } from "../../types/ButtonSize";
+
+type ButtonSize = (typeof BUTTON_SIZE)[keyof typeof BUTTON_SIZE];
 
 interface BasicButtonProps extends ComponentPropsWithoutRef<"button"> {
   children: React.ReactNode;
-  size: "small" | "medium" | "large";
+  size: ButtonSize;
 }
 
-const Button = ({ children, size = "small", ...rest }: BasicButtonProps) => {
+const Button = ({ children, size, ...rest }: BasicButtonProps) => {
   // 버튼 크기 (높이기반) 스타일
   const sizeStyles = {
     small: css`
