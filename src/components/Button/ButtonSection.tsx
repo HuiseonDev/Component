@@ -39,15 +39,18 @@ const ButtonSection = () => {
           disabled={isButtonDisabled}
           size="small"
           width="fit"
-          BasicButtontext={"small-fit"}
-        />
+          aria-label="small-fit-test-button"
+        >
+          small-fit
+        </Button>
         <Button
           onClick={handleClick}
           disabled={isButtonDisabled}
           size="small"
           width="max"
-          BasicButtontext={"small-max"}
-        />
+        >
+          small-max
+        </Button>
       </div>
       <div
         css={css`
@@ -62,15 +65,17 @@ const ButtonSection = () => {
           disabled={isButtonDisabled}
           size="medium"
           width="fit"
-          BasicButtontext={"medium-fit"}
-        />
+        >
+          medium-fit
+        </Button>
         <Button
           onClick={handleClick}
           disabled={isButtonDisabled}
           size="medium"
           width="max"
-          BasicButtontext={"medium-max"}
-        />
+        >
+          medium-max
+        </Button>
       </div>
       <div
         css={css`
@@ -85,15 +90,17 @@ const ButtonSection = () => {
           disabled={isButtonDisabled}
           size="large"
           width="fit"
-          BasicButtontext={"large-fit"}
-        />
+        >
+          large-fit
+        </Button>
         <Button
           onClick={handleClick}
           disabled={isButtonDisabled}
           size="large"
           width="max"
-          BasicButtontext={"large-max"}
-        />
+        >
+          large-max
+        </Button>
       </div>
     </section>
   );
