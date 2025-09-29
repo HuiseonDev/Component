@@ -25,7 +25,7 @@ const Filter = ({
   };
 
   const handleDropDown = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((prev) => !prev);
   };
 
   return (

@@ -6,7 +6,7 @@ const BottomCTASection = () => {
 
   const handleReady = () => {
     console.log("바텀CTA 버튼 활성화 완료");
-    setIsCTADisabled(!isCTADisabled);
+    setIsCTADisabled((prev) => !prev);
   };
 
   //** 이동하는 로직 추가 */
@@ -24,7 +24,7 @@ const BottomCTASection = () => {
       <BottomCTA
         bottomCTADisabled={isCTADisabled}
         bottomCTAText="이동하기"
-        bottomCTAHandler={handleBottomButton}
+        handleBottom={handleBottomButton}
       />
     </section>
   );

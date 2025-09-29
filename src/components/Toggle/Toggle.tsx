@@ -5,7 +5,7 @@ const Toggle = () => {
   const [isOn, setIsOn] = useState<boolean>(false);
 
   const handleToggle = () => {
-    setIsOn(!isOn);
+    setIsOn((prev) => !prev);
   };
 
   return (

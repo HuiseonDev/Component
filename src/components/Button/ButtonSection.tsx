@@ -8,8 +8,8 @@ const ButtonSection = () => {
 
   const handleReady = () => {
     console.log("기본 버튼 활성화 완료");
-    setIsButtonDisabled(!isButtonDisabled);
-    setIsChecked(!isChecked);
+    setIsButtonDisabled((prev) => !prev);
+    setIsChecked((prev) => !prev);
   };
 
   const handleClick = () => {

@@ -71,7 +71,7 @@ const ListRow = () => {
 
   // 아이템 편집 버튼 노출 핸들러
   const handleEdit = () => {
-    setIsEdit(!isEdit);
+    setIsEdit((prev) => !prev);
   };
 
   // 아이템 삭제 핸들러
