@@ -21,11 +21,9 @@ const BottomCTASection = () => {
         <input type="checkbox" onChange={handleReady} />
         <span>바텀CTA 버튼 활성화</span>
       </label>
-      <BottomCTA
-        bottomCTADisabled={isCTADisabled}
-        bottomCTAText="이동하기"
-        handleBottom={handleBottomButton}
-      />
+      <BottomCTA disabled={isCTADisabled} onClick={handleBottomButton}>
+        이동하기
+      </BottomCTA>
     </section>
   );
 };
