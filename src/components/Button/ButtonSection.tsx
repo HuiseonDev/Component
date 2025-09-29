@@ -69,6 +69,7 @@ const ButtonSection = () => {
         `}
       >
         <Button
+          as="a"
           onClick={handleClick}
           disabled={isButtonDisabled}
           size={BUTTON_SIZE.LARGE}

@@ -7,9 +7,15 @@ type ButtonSize = (typeof BUTTON_SIZE)[keyof typeof BUTTON_SIZE];
 interface BasicButtonProps extends ComponentPropsWithoutRef<"button"> {
   children: React.ReactNode;
   size: ButtonSize;
+  as?: React.ElementType;
 }
 
-const Button = ({ children, size, ...rest }: BasicButtonProps) => {
+const Button = ({
+  children,
+  size,
+  as: Comp = "button",
+  ...rest
+}: BasicButtonProps) => {
   // 버튼 크기 (높이기반) 스타일
   const sizeStyles = {
     small: css`
@@ -55,9 +61,9 @@ const Button = ({ children, size, ...rest }: BasicButtonProps) => {
   `;
 
   return (
-    <button type="button" css={styles} {...rest}>
+    <Comp css={styles} {...rest}>
       {children}
-    </button>
+    </Comp>
   );
 };
 
