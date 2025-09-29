@@ -1,4 +1,5 @@
 import { css } from "@emotion/react";
+import type { ComponentPropsWithoutRef } from "react";
 
 // 바텀CTA 버튼
 // 버튼 뒤에 출력된 텍스트를 가리지 않도록 버튼에 영역을 적용
@@ -7,27 +8,14 @@ import { css } from "@emotion/react";
 //! 버튼을 공통으로 사용 가능하도록하고 라이브러리 의존 없이 개발하는게 우선인가?
 //! 외부 라이브러리에 종속되어도 환경별 UI가 최대한 동일하게 출력되는게 우선인가?
 
-interface bottomCTAProps {
-  handleBottom: () => void;
-  bottomCTAText: string;
-  bottomCTADisabled: boolean;
-}
-
 const BottomCTA = ({
-  handleBottom,
-  bottomCTAText,
-  bottomCTADisabled,
-}: bottomCTAProps) => {
+  children,
+  ...rest
+}: ComponentPropsWithoutRef<"button">) => {
   return (
     <div css={bottomCTAWrapper}>
-      <button
-        css={bottomCTAStyle}
-        onClick={handleBottom}
-        disabled={bottomCTADisabled}
-        type="button"
-        aria-label={bottomCTAText}
-      >
-        {bottomCTAText}
+      <button css={bottomCTAStyle} {...rest}>
+        {children}
       </button>
     </div>
   );
