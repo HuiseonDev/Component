@@ -4,27 +4,9 @@ import type { ComponentPropsWithoutRef } from "react";
 interface BasicButtonProps extends ComponentPropsWithoutRef<"button"> {
   children: React.ReactNode;
   size: "small" | "medium" | "large";
-  width: "fit" | "max";
 }
 
-const Button = ({
-  children,
-  size = "small",
-  width = "fit",
-  ...rest
-}: BasicButtonProps) => {
-  // 버튼 가로값 스타일
-  const widthStyles = {
-    fit: css`
-      min-width: fit-content;
-      max-width: fit-content;
-      padding: 0 1rem;
-    `,
-    max: css`
-      width: 100%;
-    `,
-  };
-
+const Button = ({ children, size = "small", ...rest }: BasicButtonProps) => {
   // 버튼 크기 (높이기반) 스타일
   const sizeStyles = {
     small: css`
@@ -58,7 +40,6 @@ const Button = ({
     color: white;
 
     ${sizeStyles[size]}
-    ${widthStyles[width]}
 
     &:hover {
       background-color: #2563eb;

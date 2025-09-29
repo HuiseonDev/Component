@@ -38,18 +38,9 @@ const ButtonSection = () => {
           onClick={handleClick}
           disabled={isButtonDisabled}
           size="small"
-          width="fit"
           aria-label="small-fit-test-button"
         >
-          small-fit
-        </Button>
-        <Button
-          onClick={handleClick}
-          disabled={isButtonDisabled}
-          size="small"
-          width="max"
-        >
-          small-max
+          small
         </Button>
       </div>
       <div
@@ -60,21 +51,8 @@ const ButtonSection = () => {
           margin-bottom: 1rem;
         `}
       >
-        <Button
-          onClick={handleClick}
-          disabled={isButtonDisabled}
-          size="medium"
-          width="fit"
-        >
-          medium-fit
-        </Button>
-        <Button
-          onClick={handleClick}
-          disabled={isButtonDisabled}
-          size="medium"
-          width="max"
-        >
-          medium-max
+        <Button onClick={handleClick} disabled={isButtonDisabled} size="medium">
+          medium
         </Button>
       </div>
       <div
@@ -85,21 +63,8 @@ const ButtonSection = () => {
           margin-bottom: 1rem;
         `}
       >
-        <Button
-          onClick={handleClick}
-          disabled={isButtonDisabled}
-          size="large"
-          width="fit"
-        >
-          large-fit
-        </Button>
-        <Button
-          onClick={handleClick}
-          disabled={isButtonDisabled}
-          size="large"
-          width="max"
-        >
-          large-max
+        <Button onClick={handleClick} disabled={isButtonDisabled} size="large">
+          large
         </Button>
       </div>
     </section>
